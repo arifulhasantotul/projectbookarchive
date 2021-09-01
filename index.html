@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
     <!-- bootstrap cdn  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
@@ -13,12 +14,56 @@
 <body>
 
     <main class="container">
+        <!-- search title  -->
+        <h1 class="text-center my-4">Search Book Here</h1>
+        
+        <!-- search field start  -->
+        <section id="search_field">
+            
+            <div class="input-group mb-3 w-50 mx-auto">
+                
+                <!-- search box  -->
+                <input id="input_field" type="text" class="form-control" placeholder="Book name" aria-label="Book name" aria-describedby="button-addon2">
+                
+                <!-- search button  -->
+                <button onclick="searchBook()" class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-2x fa-search"></i></button>
+            </div>
 
-        <h1 class="text-center">Search Book Here</h1>
+            <div id="search_error" style="display: none">
+                <h2 class="text-center text-danger mt-5"> Write a name to search</h2>
+            </div>
+
+        </section>
+        <!-- search field end  -->
+
+        <!-- result field start here  -->
+        <section id="result_field">
+
+            <div id="loader" style="display: none;" class="spinner-border mx-auto" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+
+            <div id="row" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+                <!-- result card goes here -->
+            </div>
+
+            <div id="total_found">
+
+            </div>
+
+            <div id="result_error" style="display: none">
+                <h2 class="text-center text-danger mt-5">No result found</h2>
+            </div>
+
+        </section>
+        <!-- result field end here  -->
 
     </main>
     
 
+
+    <!-- font awesome  -->
+    <script src="https://kit.fontawesome.com/f4873ebcd9.js" crossorigin="anonymous"></script>
 
     <!-- bootstrap js bundle  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
