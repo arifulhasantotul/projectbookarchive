@@ -8,16 +8,8 @@ const totalResult = document.getElementById('total_found');
 const searchLoader = document.getElementById('loader');
 
 // api fetch function 
-const getFetchData = async (url, functionName) => {
-    // get data 
-    const fetchData = await fetch(url);
-    // response data 
-    const data = await fetchData.json();
-    // call function with data 
-    functionName(data);
-}
 
-const searchBook = () => {
+const searchBook = async () => {
     // search loader on 
     searchLoader.style.display = 'block';
     // search and result error msg off 
@@ -36,8 +28,12 @@ const searchBook = () => {
     if (inputId.value !== '') {
         // api url 
         const url = `http://openlibrary.org/search.json?q=${inputValue}`;
-        // api fetch function call 
-        getFetchData(url, showBook);
+        // get data 
+        const fetchData = await fetch(url);
+        // response data 
+        const data = await fetchData.json();
+        // call function with data 
+        showBook(data);
 
     } else {
         // blank search error msg on 
