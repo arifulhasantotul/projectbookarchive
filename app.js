@@ -76,19 +76,19 @@ const showBook = bookList => {
         row.textContent = '';
         
         // using forEach and arrow func
-        books.forEach(book => {
+        books?.forEach(book => {
             // create div 
             const div = document.createElement('div');
             // write div text 
             div.innerHTML = `
             <div class="col">
                 <div class="card mt-4 overflow-hidden mx-auto" style="width:200px; height:500px">
-                <img style="width:200px; height:230px;" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
+                <img style="width:200px; height:230px;" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Name : ${book.title}</h5>
-                        <h6> Author : ${book.author_name[0]}</h6>
+                        <h6> Author : ${book.author_name? book.author_name[0] : 'No Name Available'}</h6>
                         <p class="card-text">First Published : ${book.first_publish_year}</p>
-                        <h6>Publisher : ${book.publisher[0]}</h6>
+                        <h6>Publisher : ${book.publisher? book.publisher[0] : 'No Publisher Available'}</h6>
                     </div>
                 </div>
             </div>
@@ -108,4 +108,3 @@ const showBook = bookList => {
     }
     
 }
-
