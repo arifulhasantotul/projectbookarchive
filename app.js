@@ -87,7 +87,7 @@ const showBook = bookList => {
                     <div class="card-body">
                         <h5 class="card-title">Name : ${book.title}</h5>
                         <h6> Author : ${book.author_name? book.author_name[0] : 'No Name Available'}</h6>
-                        <p class="card-text">First Published : ${book.first_publish_year}</p>
+                        <p class="card-text">First Published : ${book.first_publish_year? book.first_publish_year : 'No Year Available'}</p>
                         <h6>Publisher : ${book.publisher? book.publisher[0] : 'No Publisher Available'}</h6>
                     </div>
                 </div>
