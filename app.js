@@ -83,7 +83,7 @@ const showBook = bookList => {
             div.innerHTML = `
             <div class="col">
                 <div class="card mt-4 overflow-hidden mx-auto rounded-3" style="width:200px; height:500px">
-                <img style="width:200px; height:230px;" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top">
+                <img style="width:200px; height:230px;" src="https://covers.openlibrary.org/b/id/${book.cover_i? book.cover_i : '10909258'}-M.jpg" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Name : ${book.title}</h5>
                         <h6> Author : ${book.author_name? book.author_name[0] : 'No Name Available'}</h6>
