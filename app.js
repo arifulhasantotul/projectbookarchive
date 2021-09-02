@@ -21,6 +21,7 @@ const searchBook = async () => {
     // get input value 
     const inputValue = inputId.value;
     
+    
     // clear row text
     document.getElementById('row').innerHTML = '';
     totalResult.textContent = '';
@@ -51,6 +52,7 @@ const searchBook = async () => {
 
 const showBook = bookList => {
 
+    document.getElementById('input_field').value = '';
     // no result found handle condition
     if (bookList.numFound !== 0) {
         
@@ -80,7 +82,7 @@ const showBook = bookList => {
             // write div text 
             div.innerHTML = `
             <div class="col">
-                <div class="card mt-4 overflow-hidden" style="width:200px; height:500px">
+                <div class="card mt-4 overflow-hidden mx-auto" style="width:200px; height:500px">
                 <img style="width:200px; height:230px;" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Name : ${book.title}</h5>
