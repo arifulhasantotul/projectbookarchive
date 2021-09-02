@@ -23,11 +23,12 @@ const searchBook = async () => {
     
     // clear row text
     document.getElementById('row').innerHTML = '';
+    totalResult.textContent = '';
 
     // blank search error handle condition
     if (inputId.value !== '') {
         // api url 
-        const url = `http://openlibrary.org/search.json?q=${inputValue}`;
+        const url = `https://openlibrary.org/search.json?q=${inputValue}`;
         // get data 
         const fetchData = await fetch(url);
         // response data 
